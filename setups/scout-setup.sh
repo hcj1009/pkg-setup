@@ -77,8 +77,8 @@ PKG_NAM[$C]="scout"
 PKG_VER[$C]="unknown"
 PKG_DIR[$C]="."
 PKG_FIL[$C]=""
-PKG_LNK[$C]="https://github.com/hcj1009/scout.git"
-PKG_CMD[$C]="if [[ ! -d 'scout' ]]; then git clone --recursive ${PKG_LNK[$C]}; fi"
+PKG_LNK[$C]="https://github.com/hcj1009/scout-linux.git"
+PKG_CMD[$C]="if [[ ! -d 'scout-linux' ]]; then git clone --recursive ${PKG_LNK[$C]}; fi"
 
 ### End of package configuration
 

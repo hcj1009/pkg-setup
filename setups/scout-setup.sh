@@ -91,7 +91,7 @@ do
 	if [[ -z "${PKG_DIR[$i]}" ]]
 	then
 		echo "[$i] Directory not defined. Using \".\"."
-		PKG_FIL[$i]="."
+		PKG_DIR[$i]="."
 	fi
 	if [[ -d "${PKG_DIR[$i]}" ]]
 	then

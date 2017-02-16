@@ -68,14 +68,14 @@ PKG_NAM[$C]="libsodium"
 PKG_VER[$C]="1.0.11"
 PKG_DIR[$C]="./pkg"
 PKG_FIL[$C]="${PKG_NAM[$C]}-${PKG_VER[$C]}.tar.gz"
-PKG_LNK[$C]="https://github.com/jedisct1/libsodium/releases/download/																										${PKG_VER[$C]}/${PKG_FIL[$C]}"
+PKG_LNK[$C]="https://github.com/jedisct1/libsodium/releases/download/${PKG_VER[$C]}/${PKG_FIL[$C]}"
 PKG_CMD[$C]="if [[ ! -d ${PKG_NAM[$C]}-${PKG_VER[$C]} ]]; then tar -axf ${PKG_DIR[$C]}/${PKG_FIL[$C]}; fi; if [[ -d ${PKG_NAM[$C]}-${PKG_VER[$C]} && ! -f .sodium_configure_flag ]]; then cd ${PKG_NAM[$C]}-${PKG_VER[$C]}; ./configure; cd ..; touch .sodium_configure_flag; fi; if [[ -d ${PKG_NAM[$C]}-${PKG_VER[$C]} && ! -f .sodium_build_flag ]]; then cd ${PKG_NAM[$C]}-${PKG_VER[$C]}; make; cd ..; touch .sodium_build_flag; fi;"
 
 # Scout
 C=${#PKG_NAM[@]}+1
 PKG_NAM[$C]="scout"
 PKG_VER[$C]="unknown"
-PKG_DIR[$C]="."
+PKG_DIR[$C]=""
 PKG_FIL[$C]=""
 PKG_LNK[$C]="https://github.com/hcj1009/scout-linux.git"
 PKG_CMD[$C]="if [[ ! -d 'scout-linux' ]]; then git clone --recursive ${PKG_LNK[$C]}; fi"
@@ -88,7 +88,7 @@ echo
 for i in `seq 1 ${#PKG_NAM[@]}`
 do
 	echo "[$i] Processing package: ${PKG_NAM[$i]} @ ${PKG_VER[$i]}"
-	if [[ -z "${PKG_FIL[$i]}" ]]
+	if [[ -z "${PKG_DIR[$i]}" ]]
 	then
 		echo "[$i] Directory not defined. Using \".\"."
 		PKG_FIL[$i]="."
